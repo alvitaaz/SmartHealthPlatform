@@ -12,6 +12,7 @@ A web-based healthcare system developed as a Capstone Project. It allows patient
 ##  Use Case Diagram
 
 This diagram outlines the core interactions between the user (patient) and the main features of the Smart Health Web Platform. It includes registration, login with password verification and incorrect password handling, accessing the dashboard, scheduling appointments, viewing doctor and appointment information, telemedicine consultation, updating profile, providing feedback, and logout.
+
 <img width="2418" height="1152" alt="Screenshot (242)" src="https://github.com/user-attachments/assets/f8b0e16d-202d-4ef6-bbc4-5e9dc67b90f3" />
 
 
