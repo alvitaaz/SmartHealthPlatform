@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telecoor — Home</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+
+  <style>
+
+    .hero {
+      max-width: 1200px;    
+      margin: 0 auto;        
+    }
+s
+    .hero-right {
+      padding: 4rem;
+      background: #F7F8FA;
+      border-radius: 0 1rem 1rem 0;
+    }
+    .hero-right h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .btn-primary-custom {
+      background: #3E9C95;
+      border-color: #3E9C95;
+      border-radius: 2rem;
+      padding: 0.75rem 1.5rem;
+    }
+    .hero-left {
+      position: relative;
+      background: #3E9C95;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem 0 0 1rem ;
+    }
+    .hero-left img.doctor {
+      max-width: 85%;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    .form-pane { display: none; }
+    .btn-primary-custom {
+      background-color: #3E9C95;
+      border-color:     #3E9C95;
+      color:            #fff;
+      transition:       background-color .2s ease, border-color .2s ease;
+    }
+
+    .btn-primary-custom:hover {
+      background-color: #50BEB0; 
+      border-color:     #50BEB0;
+      color:            #fff;    
+    }
+
+    .form-card {
+      border: 1px solid #E5E7EB;
+      border-radius: .75rem;
+      background: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .form-card .card-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: none;
+      font-weight: 600;
+      font-size: 1.125rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      border-top-left-radius: .75rem;
+      border-top-right-radius: .75rem;
+    }
+    .form-card .card-header a {
+      font-size: .875rem;
+      color: #2563EB;
+      text-decoration: none;
+    }
+    .form-card .card-header a:hover {
+      text-decoration: underline;
+    }
+    .form-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .form-label {
+      font-weight: 500;
+      margin-bottom: .25rem;
+    }
+    .form-label.required::after {
+      content: "*";
+      color: #DC2626;
+      margin-left: .25rem;
+    }
+
+    .form-control,
+    .form-select {
+      border: 1px solid #CBD5E0;
+      border-radius: .5rem;
+      background: #F9FAFB;
+      padding: .5rem .75rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .form-control:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: #3E9C95;
+      box-shadow: 0 0 0 .2rem rgba(62,156,149,0.25);
+      background: #FFFFFF;
+    }
+    .form-control::placeholder {
+      color: #94A3B8;
+    }
+
+    .row.g-3 > [class*="col-"] {
+      margin-bottom: 1rem;
+    }
+
+    .form-check-inline .form-check-input {
+      margin-top: .2rem;
+    }
+    .form-check-inline .form-check-label {
+      margin-left: .25rem;
+      font-weight: 400;
+    }
+
+    #time-slots .btn-group .btn {
+      border: 1px solid #CBD5E0;
+      border-radius: .5rem;
+      background: #FFFFFF;
+      color: #1F2937;
+      padding: .5rem .75rem;
+      transition: background .2s, border-color .2s;
+    }
+    #time-slots .btn-group .btn.active,
+    #time-slots .btn-group .btn:hover {
+      background: #E6FFFA;
+      border-color: #3E9C95;
+      color: #065F46;
+    }
+
+    .btn-success,
+    .btn-secondary {
+      border-radius: .5rem;
+      padding: .5rem 1.25rem;
+    }
+    .btn-success:hover { filter: brightness(1.1); }
+    .btn-secondary:hover { filter: brightness(1.05); }
+
+    
+    #confirmation {
+      display: none;
+      padding: 4rem 1rem;
+    }
+    #confirmation .bi {
+      font-size: 3rem;
+      color: #3E9C95;
+    }
+    #confirmation h2 {
+      font-size: 1.75rem;
+      margin-top: 1rem;
+      margin-bottom: .5rem;
+    }
+    #confirmation p {
+      color: #6B7280;
+      margin-bottom: 2rem;
+    }
+    #confirmation .bi-stethoscope {
+      font-size: 4rem;
+    }
+
+
+    .dashboard-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #3E9C95;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, transform 0.15s ease;
+      z-index: 1050;
+    }
+    .dashboard-btn:hover {
+      background-color: #50BEB0;
+      transform: scale(1.1);
+    }
+    .dashboard-btn .bi-house-door {
+      color: white;
+      font-size: 24px;
+    }
+
+    @media (max-width: 576px) {
+      .dashboard-btn {
+        width: 40px;
+        height: 40px;
+      }
+      .dashboard-btn .bi-house-door {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <button class="dashboard-btn" aria-label="Dashboard" title="Dashboard" onclick="window.location.href='dashboard.php'">
+    <i class="bi bi-house-door"></i>
+  </button>
+
+  <section class="hero container my-5">  
+    <div class="row g-0 align-items-stretch">
+      <div class="col-lg-6 hero-left" style="min-height: 600px;">
+        <img src="telemed.png" alt="Doctor" class="doctor"/>
+      </div>
+      <div class="col-lg-6 hero-right d-flex flex-column" style="min-height: 600px;">
+        <div class="main-pane flex-fill">
+          <span class="badge bg-light text-dark mb-4">Personalized Health Plans</span>
+          <h1>Why Wait in Line?<br/>Get Medical Care Online with MediCare</h1>
+          <p class="lead text-secondary">
+            MediCare brings expert healthcare to your fingertips, so you can get the care you need without the long waits or travel.
+          </p>
+          <button class="btn btn-primary-custom btn-lg mt-3 BtnForm text-white">
+            Get Start!
+          </button>
+        </div>
+        <div class="form-pane  flex-fill" id="form-panel" >
+          <div>
+            <h2 class="mb-4">Form Data Telemedicine</h2>
+            <form id="telemedForm">
+              <div class="row g-3">
+                
+                <div class="col-md-12">
+                  <label for="patientDate" class="form-label required">
+                    Date
+                  </label>
+                  <input
+                    type="date"
+                    id="patientDate"
+                    name="date"
+                    class="form-control"
+                  />
+                </div>
+
+             
+                <div id="time-slots" class="mt-3" style="display:none; margin-bottom:20px;">
+                  <label style="font-weight: 600">Pilih Jam</label>
+                  <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
+                    <label class="btn btn-outline-primary flex-fill m-1">
+                      <input type="radio" name="patientTime" autocomplete="off" value="09:00-13:00"> 09:00 - 13:00
+                    </label>
+                    <label class="btn btn-outline-primary flex-fill m-1">
+                      <input type="radio" name="patientTime" autocomplete="off" value="16:00-18:00"> 16:00 - 18:00
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="notes" class="form-label">
+                    Notes
+                  </label>
+                  <textarea
+                    id="notes"
+                    name="notes"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Optional notes about this appointment..."
+                  ></textarea>
+                </div>
+
+     
+                <div class="col-md-6">
+                  <label for="type" class="form-label">
+                    Type
+                  </label>
+                  <input
+                    type="text"
+                    id="type"
+                    name="type"
+                    class="form-control"
+                    value="Online Video"
+                    disabled
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="doctor_id" class="form-label required">
+                    Select Doctor
+                  </label>
+                  <select
+                    id="doctor_id"
+                    name="doctor_id"
+                    class="form-select"
+                    
+                  >
+                    <option value="">-- Choose Doctor --</option>
+           
+                  </select>
+                </div>
+
+
+                <div class="col-12 d-flex justify-content-end mt-4">
+                  <button type="button" class="btn btn-secondary me-2 BtnBack">
+                    Batal
+                  </button>
+                  <button type="submit" class="btn btn-success">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+                 
+          <div id="confirmation" class="text-center bg-white rounded shadow-sm">
+            <i class="bi bi-envelope-check"></i>
+            <h2>Thanks! We’ll be in touch</h2>
+            <p>Your telemedicine appointment has been successfully scheduled.</p>
+            <i class="bi bi-stethoscope"></i>
+          </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+
+  <script>
+    const btnForm = document.querySelector('.BtnForm');
+    const btnBack = document.querySelector('.BtnBack');
+    const mainPane = document.querySelector('.main-pane');
+    const formPane = document.querySelector('.form-pane');
+
+    btnForm.addEventListener('click', () => {
+      mainPane.style.display = 'none';
+      formPane.style.display = 'block';
+    });
+    btnBack.addEventListener('click', () => {
+      formPane.style.display = 'none';
+      mainPane.style.display = 'block';
+    });
+
+     // time appear
+     document.addEventListener('DOMContentLoaded', function(){
+        const dateInput  = document.getElementById('patientDate');
+        const slotsDiv   = document.getElementById('time-slots');
+        const hiddenTime = document.getElementById('patientTime');
+
+        dateInput.addEventListener('change', function(){
+          if (this.value) {
+            slotsDiv.style.display = 'block';
+          } else {
+            slotsDiv.style.display = 'none';
+            hiddenTime.value = '';
+            document.querySelectorAll('#time-slots .btn').forEach(b=>b.classList.remove('active'));
+          }
+        });
+
+        document.querySelectorAll('#time-slots input[name="slot"]').forEach(radio=>{
+          radio.addEventListener('change', function(){
+            hiddenTime.value = this.value;
+          });
+        });
+      });
+  </script>
+    <script>
+    const form = document.getElementById('telemedForm');
+    const formPanel = document.getElementById('form-panel');
+    const confirmPanel = document.getElementById('confirmation');
+
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      formPanel.style.display    = 'none';
+      confirmPanel.style.display = 'block';
+    });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
